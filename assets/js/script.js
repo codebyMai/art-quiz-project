@@ -42,17 +42,20 @@ let art = document.getElementById("art");
 let answerA = document.getElementById("A");
 let answerB = document.getElementById("B");
 let answerC = document.getElementById("C");
+let modalscore = document.getElementById("modalscore");
+let totalscore = document.getElementById("totalscore");
 
 // question variables
 
 let lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let score = 0;
+let randomQuestion = Math.floor(Math.random() * question);
+let scorePerCent = Math.round(100 * score/questions.length);
 
 
 // display question
-
-function displayQuestion(){
+/*function displayQuestion(){
     let i = questions[runningQuestion];
     
     question.innerHTML = "<p>"+ i.question +"</p>";
@@ -60,6 +63,18 @@ function displayQuestion(){
     answerA.innerHTML = i.answerA;
     answerB.innerHTML = i.answerB;
     answerC.innerHTML = i.answerC; 
+}*/
+
+function displayQuestion(){
+    
+    let i = questions[runningQuestion];
+
+    question.innerHTML = "<p>"+ i.question +"</p>";
+    art.innerHTML = "<img src="+ i.art +">";
+    answerA.innerHTML = i.answerA;
+    answerB.innerHTML = i.answerB;
+    answerC.innerHTML = i.answerC; 
+    
 }
 
 // start quiz
@@ -81,10 +96,32 @@ function reStartQuiz(){
     score = 0;
     runningQuestion = 0;
 }
+function openModal() {
+    document.getElementById("modalscore").style.display = "block"
+    document.getElementById("modalscore").className += "show"
+    totalscore.innerHTML = "<p>"+ `You got ${ scorePerCent } % right!` +"</p>";
+}
 
-// check answers and display personalized comments
 
+// check answers and display personalized comments    
 function checkAnswer(answer){
+    let d = questions[runningQuestion];
+    let right = d.right;
+    let wrong = d.wrong;
+    if( answer == questions[runningQuestion].correct){
+        score++;
+    }else{
+    }
+
+    if(runningQuestion < lastQuestion){
+        runningQuestion++;
+        displayQuestion();
+    }else{
+        // display score and restart quiz
+        openModal();
+    }
+}
+/*function checkAnswer(answer){
     let d = questions[runningQuestion];
     let right = d.right;
     let wrong = d.wrong;
@@ -103,12 +140,11 @@ function checkAnswer(answer){
         displayScore();
         reStartQuiz();
     }
-}
-
-// display score alert 
-
+}*/
+/*// display score alert 
 function displayScore(){
    
     let scorePerCent = Math.round(100 * score/questions.length);
     alert(`You got ${ scorePerCent } % right!`);  
 }
+*/

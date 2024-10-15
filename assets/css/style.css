@@ -175,6 +175,26 @@ footer {
     }    
 }
 
+#modalscore {
+    display: none; 
+    position: fixed; 
+    justify-content: center;
+    z-index: 1; 
+    left: 50%;
+    top: 50%;
+    width: 60%; 
+    height: 70%; 
+    overflow: auto;
+    background-color: #D7E8F1;
+    font-size: 20px;
+    color: #04162B;
+    border : 3px solid #91A2AF;
+    border-radius: 5px;
+    vertical-align: middle;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
 @media screen and (min-width: 992px) { 
     .answer:hover{
         border : 3px solid #D7E8F1;
