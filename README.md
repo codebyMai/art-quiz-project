@@ -6,7 +6,7 @@ Test Your Art Knowledge website is designed to popularize art and promote art hi
 
 ## Demo
 
-Link to the live site here: <https://codebymai.github.io/art-quiz/>
+Link to the live site here: <https://codebymai.github.io/art-quiz-project/>
 
 ---
 
@@ -128,14 +128,18 @@ When one of the buttons is clicked it results in an alert window popping up on t
 ![Correct Answer Comment](assets/docs/correct-answer.png)
 ![Inorrect Answer Comment](assets/docs/incorrect-answer.png)
 
-When user answers 3 questions an alert window informs them what percentage of their answers was correct.
+When user answers 3 questions a modal window opens up and informs them what percentage of their answers was correct.
+User has a choice to play again or quit.
 
-![Inorrect Answer Comment](assets/docs/result.png)
+![Results](assets/docs/result.png)
+
+If user chooses to quit a thank you message is displayed.
+
+![End](assets/docs/end.png)
 
 ### Potential Future Updates and Features
 
 * Due to the time constraints Quiz only features three questions. Ideally I would like to expand it to at least 50 questions and increase amount of questions in the round to 5. 
-* Presenting results in HTML rather than alert form.
 * Introducing comments to the results depending on the score.
 * Including a feature allowing users to share their results on social media.
 * Downsizing images to improve performance.
@@ -192,7 +196,7 @@ The page was created using VS Code and deployed to Github.
 
 ### Forking
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/codebyMai/art-quiz)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/codebyMai/art-quiz-project)
 2. In the top-right corner of the page, click Fork.
 3. Once clicked, you should have a copy of the repository.
 
@@ -233,15 +237,17 @@ The page was created using VS Code and deployed to Github.
 * [W3 School](https://www.w3schools.com)
 * [Stackoverflow](https://stackoverflow.com/)
 * [Demystifying The CSS Display Property](https://coderpad.io/blog/development/demystifying-the-css-display-property/)
+* [Modals](https://www.w3schools.com/howto/howto_css_modals.asp)
+* [Help with taming a modal](https://stackoverflow.com/questions/39627549/how-to-center-modal-to-the-center-of-screen)
+* Even though I did not use Bootstrap in my project [the following discussion](https://www.sitepoint.com/community/t/how-toggle-bootstrap-5-modal-without-button-click/363536) was helpful with tackling opening a modal without a button
 
 Following tutorials helped me to understand the mechanics of bulding a quiz in JavaScript:
 
 * [How to Make a Simple JavaScript Quiz](https://www.sitepoint.com/simple-javascript-quiz/)
 * [How To Make Quiz App Using JavaScript](https://www.youtube.com/watch?v=PBcqGxrr9g8)
-* [Let’s Build a Multiple Choice Quiz App With JavaScript](https://webdesign.tutsplus.com/multiple-choice-quiz-app-with-javascript--cms-107756t)
-* [Create a Multiple Choice Quiz App Using JavaScript](https://www.youtube.com/watch?v=49pYIMygIcU)
 * [Build A Quiz App With JavaScript](https://www.youtube.com/watch?v=LJ4PZ8JnRCg)
-
+* [Let’s Build a Multiple Choice Quiz App With JavaScript](https://webdesign.tutsplus.com/multiple-choice-quiz-app-with-javascript--cms-107756t)
+* Handling of the questions in my project was heavily inspired by the [following tutorial](https://www.youtube.com/watch?v=49pYIMygIcU)
 
 ---
 

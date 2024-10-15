@@ -1,5 +1,7 @@
-// list of questions 
+/* jshint esversion: 6 */
 
+// list of questions 
+/* Handling of the questions was inspired by a YouTube tutorial - details in credits */
 let questions = [
     {
         question : "The artist was known for his love of cats and unconventional fashion choices. Who painted this portrait?",
@@ -34,7 +36,6 @@ let questions = [
 ];
 
 // elements selection
-
 let start = document.getElementById("start");
 let quiz = document.getElementById("quiz");
 let question = document.getElementById("question");
@@ -42,18 +43,16 @@ let art = document.getElementById("art");
 let answerA = document.getElementById("A");
 let answerB = document.getElementById("B");
 let answerC = document.getElementById("C");
-let modalscore = document.getElementById("modalscore");
 let totalscore = document.getElementById("totalscore");
 let goodbye = document.getElementById("goodbye");
-// question variables
 
+// question variables
 let lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let score = 0;
-//let randomQuestion = Math.floor(Math.random() * question);
 
 
-
+// display questions
 function displayQuestion(){
     
     let i = questions[runningQuestion];
@@ -72,10 +71,11 @@ function startQuiz(){
     start.style.display = "none";
     displayQuestion();
     quiz.style.display = "block";
+    checkAnswer;
 }
 
 // restart quiz
-document.getElementById("again-btn").onclick = function() {reStartQuiz()};
+document.getElementById("again-btn").onclick = function() {reStartQuiz();};
 
 function reStartQuiz(){
     start.style.display = "block";
@@ -85,17 +85,21 @@ function reStartQuiz(){
     runningQuestion = 0;
     closeModal();
 }
+
+// score modal opening
 function openModal() {
-    let scorePerCent = Math.round(100 * score/questions.length)
-    document.getElementById("modalscore").style.display = "block"
-    document.getElementById("modalscore").className += "show"
+    let scorePerCent = Math.round(100 * score/questions.length);
+    document.getElementById("modalscore").style.display = "block";
+    document.getElementById("modalscore").className += "show";
     totalscore.innerHTML = "<p>"+ `You got ${ scorePerCent }% right!` +"</p>";
 }
+
+// score modal closing
 function closeModal() {
-    document.getElementById("modalscore").style.display = "none"
+    document.getElementById("modalscore").style.display = "none";
 }
 
-// check answers and display personalized comments    
+// check answers and display personalized comments   
 function checkAnswer(answer){
     let d = questions[runningQuestion];
     let right = d.right;
@@ -113,8 +117,10 @@ function checkAnswer(answer){
         // display score 
         openModal();
     }
-}  
-document.getElementById("quit-btn").onclick = function() {goodBye()};
+}
+
+// display end message 
+document.getElementById("quit-btn").onclick = function() {goodBye();};
 function goodBye(){
     quiz.style.display = "none";
     closeModal();

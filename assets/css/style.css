@@ -146,6 +146,74 @@ footer {
     list-style-type: none;
 }
 
+/* score modal styles */
+
+#modalscore {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 50%;
+    top: 50%;
+    width: 60%; 
+    height: 80%; 
+    overflow: auto;
+    background-color: #4A5C6D;;
+    border : 3px solid #D7E8F1;
+    border-radius: 5px;
+    vertical-align: middle;
+    transform: translate(-50%, -50%);
+}
+#totalscore {
+    font-size: 30px;
+    font-weight: bold;
+    color: #D7E8F1;
+    justify-content: center;
+    text-align: center;
+    padding: 60px;
+    background-color: #4A5C6D;
+}
+#endbuttons {
+    position: relative;
+    justify-content: space-evenly;
+    margin: 0 auto; 
+    text-align: center;
+    text-decoration: none;
+}
+#again-btn, #quit-btn {    
+    margin-top: 60px;
+    border-radius: 5px;
+    background-color: #91A2AF;
+    border : 1px solid #D7E8F1;
+    color: #04162B;
+    font-size: 18px;
+    width: 250px;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline;
+    text-decoration-line: none;
+}
+a:link { 
+    text-decoration: none; 
+} 
+
+/* end screen styles */
+
+#goodbye { 
+    display: block;
+    align-items: center;
+    justify-content: center; 
+    width: 100%; 
+    height: 100%; 
+    background-color: #4A5C6D;; 
+}
+#goodbye-text {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #D7E8F1;
+    padding-top: 60px;
+}  
+
 /* media queries */
 
 /* for smaller screens */
@@ -175,71 +243,7 @@ footer {
     }    
 }
 
-#modalscore {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    left: 50%;
-    top: 50%;
-    width: 60%; 
-    height: 80%; 
-    overflow: auto;
-    background-color: #4A5C6D;;
-    border : 3px solid #D7E8F1;
-    border-radius: 5px;
-    vertical-align: middle;
-    transform: translate(-50%, -50%);
-}
-#totalscore {
-    font-size: 30px;
-    font-weight: bold;
-    color: #D7E8F1;
-    justify-content: center;
-    text-align: center;
-    padding: 60px;
-    background-color: #4A5C6D;
-}
-#endbuttons {
-    display: center;
-    position: relative;
-    justify-content: space-evenly;
-    margin: 0 auto; 
-    text-align: center;
-    text-decoration: none;
-}
-#again-btn, #quit-btn {    
-    margin-top: 60px;
-    border-radius: 5px;
-    background-color: #91A2AF;
-    border : 1px solid #D7E8F1;
-    color: #04162B;
-    font-size: 18px;
-    width: 250px;
-    padding: 15px 32px;
-    text-align: center;
-    display: inline;
-    text-decoration-line: none;
-}
-a:link { 
-    text-decoration: none; 
-  } 
-
-#goodbye { 
-    display: block;
-    align-items: center;
-    justify-content: center; 
-    width: 100%; 
-    height: 100%; 
-    background-color: #4A5C6D;;
-    
-}
-#goodbye-text {
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    color: #D7E8F1;
-    padding-top: 60px;
-}  
+/* for larger screens */
 
 @media screen and (min-width: 992px) { 
     .answer:hover{
