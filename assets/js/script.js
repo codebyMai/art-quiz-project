@@ -44,26 +44,15 @@ let answerB = document.getElementById("B");
 let answerC = document.getElementById("C");
 let modalscore = document.getElementById("modalscore");
 let totalscore = document.getElementById("totalscore");
-
+let goodbye = document.getElementById("goodbye");
 // question variables
 
 let lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let score = 0;
-let randomQuestion = Math.floor(Math.random() * question);
+//let randomQuestion = Math.floor(Math.random() * question);
 
 
-
-// display question
-/*function displayQuestion(){
-    let i = questions[runningQuestion];
-    
-    question.innerHTML = "<p>"+ i.question +"</p>";
-    art.innerHTML = "<img src="+ i.art +">";
-    answerA.innerHTML = i.answerA;
-    answerB.innerHTML = i.answerB;
-    answerC.innerHTML = i.answerC; 
-}*/
 
 function displayQuestion(){
     
@@ -73,12 +62,10 @@ function displayQuestion(){
     art.innerHTML = "<img src="+ i.art +">";
     answerA.innerHTML = i.answerA;
     answerB.innerHTML = i.answerB;
-    answerC.innerHTML = i.answerC; 
-    
+    answerC.innerHTML = i.answerC;   
 }
 
 // start quiz
-
 start.addEventListener("click",startQuiz);
 
 function startQuiz(){
@@ -88,6 +75,7 @@ function startQuiz(){
 }
 
 // restart quiz
+document.getElementById("again-btn").onclick = function() {reStartQuiz()};
 
 function reStartQuiz(){
     start.style.display = "block";
@@ -95,6 +83,7 @@ function reStartQuiz(){
     quiz.style.display = "none";
     score = 0;
     runningQuestion = 0;
+    closeModal();
 }
 function openModal() {
     let scorePerCent = Math.round(100 * score/questions.length)
@@ -102,7 +91,9 @@ function openModal() {
     document.getElementById("modalscore").className += "show"
     totalscore.innerHTML = "<p>"+ `You got ${ scorePerCent }% right!` +"</p>";
 }
-
+function closeModal() {
+    document.getElementById("modalscore").style.display = "none"
+}
 
 // check answers and display personalized comments    
 function checkAnswer(answer){
@@ -110,45 +101,25 @@ function checkAnswer(answer){
     let right = d.right;
     let wrong = d.wrong;
     if( answer == questions[runningQuestion].correct){
-        score++;
-    }else{
-    }
-
-    if(runningQuestion < lastQuestion){
-        runningQuestion++;
-        displayQuestion();
-    }else{
-        // display score and restart quiz
-        openModal();
-    }
-}
-
-document.getElementById("quit").onclick = function() {startQuiz()};
-
-/*function checkAnswer(answer){
-    let d = questions[runningQuestion];
-    let right = d.right;
-    let wrong = d.wrong;
-    if( answer == questions[runningQuestion].correct){
-        score++;
+        score++;    
         alert(`You are right! ${ right } `);
-    }else{
+    }else {
         alert(`You are wrong! ${ wrong } `);
     }
-
     if(runningQuestion < lastQuestion){
         runningQuestion++;
         displayQuestion();
     }else{
-        // display score and restart quiz
-        displayScore();
-        reStartQuiz();
+        // display score 
+        openModal();
     }
-}*/
-/*// display score alert 
-function displayScore(){
-   
-    let scorePerCent = Math.round(100 * score/questions.length);
-    alert(`You got ${ scorePerCent } % right!`);  
+}  
+document.getElementById("quit-btn").onclick = function() {goodBye()};
+function goodBye(){
+    quiz.style.display = "none";
+    closeModal();
+    goodbye.style.display = "block";
 }
-*/
+
+
+
