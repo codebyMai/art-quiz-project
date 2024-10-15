@@ -1,0 +1,183 @@
+/* google fonts import */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Walter+Turncoat&display=swap');
+
+/* reset styles */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* general styles */ 
+
+main {
+    background-color:#4A5C6D ;
+    min-height: 100vh;
+}
+body{
+    font-size: 16px;
+    font-family: Montserrat;
+} 
+h1 {
+    font-family: "Walter Turncoat", sans-serif;
+    font-size: 40px;
+    text-align: center;
+    color: #04162B;
+    background-color: #91A2AF;
+    padding: 10px;
+} 
+
+/* landing page styles */
+
+h2 {
+    font-family: "Walter Turncoat", sans-serif;
+    font-size: 25px;
+    color: #04162B;
+    padding: 10px;
+}
+#background {
+    background: url('../images/start.png');
+    background-repeat: repeat-y;
+    width: 100%;
+    border : 3px solid #D7E8F1;
+    background-size: 100% ;
+    min-height: 100vh;
+    overflow: auto; 
+}
+#instruct {
+    font-size: 20px;
+    color: #04162B;
+    border : 3px solid #91A2AF;
+    border-radius: 5px;
+    background-color: #D7E8F1;
+    display: block;
+    margin: 40px auto;
+    width: 50%;
+    padding-bottom: 20px;
+}
+ul {
+    list-style-type: none; 
+}
+#start {
+    align-content: center;
+    text-align: center;  
+} 
+#start-btn {
+    margin-top: 30px;
+    border-radius: 5px;
+    background-color: #91A2AF;
+    border : 1px solid #D7E8F1;
+    color: #04162B;
+    font-size: 18px;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline;
+}
+#start-btn:hover {
+    border: 3px solid #D7E8F1;
+    font-weight: bold;
+}
+
+/* quiz styles */
+
+#art {
+    display: flex;
+    justify-content: center;
+    border : 3px solid #D7E8F1;
+    height: 70vh;
+    width: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #91A2AF; 
+}
+#question {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #D7E8F1;
+    background-color: #4A5C6D;
+}
+#question p{
+    margin : 0;
+    padding : 15px;
+    font-size: 1.2em;
+}
+#answers{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: #4A5C6D;
+}
+.answer{
+    display: inline-block;
+    width : 250px;
+    text-align: center;
+    border : 1px solid #D7E8F1;
+    background-color: #91A2AF ;
+    color: #04162B;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 15px 32px;
+}
+#quiz {
+    display: block;
+    align-items: center;
+    justify-content: center; 
+}
+
+/* footer */
+
+footer {
+    background-color: #4A5C6D;
+}
+#socials i {
+    font-size: 200%;
+    color: #D7E8F1; 
+}
+#socials {    
+    text-align: center;
+    padding: 20px; 
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+/* media queries */
+
+/* for smaller screens */
+
+@media screen and (max-width: 600px) {
+    #art {
+        height: 400px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    #instruct {
+        font-size: 15px;
+    }
+    #start-btn {
+        font-size:18px;
+    }
+    #question p{
+        font-size: 0.7em;
+    }
+    .answer {
+        font-size: 0.7em;
+        width: 100px;
+    }    
+}
+
+@media screen and (min-width: 992px) { 
+    .answer:hover{
+        border : 3px solid #D7E8F1;
+        font-weight: bold;
+    }
+}    
