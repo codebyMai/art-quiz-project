@@ -178,26 +178,64 @@ footer {
 #modalscore {
     display: none; 
     position: fixed; 
-    justify-content: center;
     z-index: 1; 
     left: 50%;
     top: 50%;
     width: 60%; 
-    height: 70%; 
+    height: 80%; 
     overflow: auto;
-    background-color: #D7E8F1;
-    font-size: 20px;
-    color: #04162B;
-    border : 3px solid #91A2AF;
+    background-color: #4A5C6D;;
+    border : 3px solid #D7E8F1;
     border-radius: 5px;
     vertical-align: middle;
     position: absolute;
     transform: translate(-50%, -50%);
 }
+#totalscore {
+    font-size: 30px;
+    font-weight: bold;
+    color: #D7E8F1;
+    justify-content: center;
+    text-align: center;
+    padding: 60px;
+    background-color: #4A5C6D;
+}
+#endbuttons {
+    display: center;
+    position: relative;
+    justify-content: space-evenly;
+    margin: 0 auto; 
+    text-align: center;
+    text-decoration: none;
+}
+#again, #quit {    
+    margin-top: 60px;
+    border-radius: 5px;
+    background-color: #91A2AF;
+    border : 1px solid #D7E8F1;
+    color: #04162B;
+    font-size: 18px;
+    width: 250px;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline;
+    text-decoration-line: none;
+}
+a:link { 
+    text-decoration: none; 
+  } 
 
 @media screen and (min-width: 992px) { 
     .answer:hover{
         border : 3px solid #D7E8F1;
+        font-weight: bold;
+    }
+    #quit:hover {
+        border : 3px solid #D7E8F1;
+        font-weight: bold;
+    }
+    #again:hover {
+        border: 3px solid #D7E8F1;
         font-weight: bold;
     }
 }    

@@ -51,7 +51,7 @@ let lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let score = 0;
 let randomQuestion = Math.floor(Math.random() * question);
-let scorePerCent = Math.round(100 * score/questions.length);
+
 
 
 // display question
@@ -97,9 +97,10 @@ function reStartQuiz(){
     runningQuestion = 0;
 }
 function openModal() {
+    let scorePerCent = Math.round(100 * score/questions.length)
     document.getElementById("modalscore").style.display = "block"
     document.getElementById("modalscore").className += "show"
-    totalscore.innerHTML = "<p>"+ `You got ${ scorePerCent } % right!` +"</p>";
+    totalscore.innerHTML = "<p>"+ `You got ${ scorePerCent }% right!` +"</p>";
 }
 
 
@@ -121,6 +122,9 @@ function checkAnswer(answer){
         openModal();
     }
 }
+
+document.getElementById("quit").onclick = function() {startQuiz()};
+
 /*function checkAnswer(answer){
     let d = questions[runningQuestion];
     let right = d.right;
